@@ -1,8 +1,8 @@
 ---
 # vars file for tomcat
 tomcat:
-    appgroup: main
-    appuser: main
+    appgroup: root
+    appuser: root
     gid: 5000
     uid: 5000
 
