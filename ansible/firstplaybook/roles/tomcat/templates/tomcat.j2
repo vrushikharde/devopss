@@ -7,8 +7,6 @@ export JAVA_HOME="{{ tomcat.java.home }}"
 export CATALINA_HOME="{{ tomcat.catalina.home }}"
 export CATALINA_PID="{{ tomcat.catalina.pid }}"
 
-SU="su"
-
 start() {
   isrunning
 
@@ -23,7 +21,7 @@ start() {
   # Remove pidfile if still around
   test -f $CATALINA_PID && rm -f $CATALINA_PID
 
-  $CATALINA_HOME/bin/catalina.sh start > /dev/null
+  sh $CATALINA_HOME/bin/catalina.sh start > /dev/null
 }
 
 stop() {
@@ -39,7 +37,7 @@ stop() {
 
   count=0
   until [ "$pid" = "" ] || [ $count -gt $SHUTDOWN_WAIT ]; do
-    $CATALINA_HOME/bin/catalina.sh stop -force > /dev/null
+    $SU $APP_USER -c "$CATALINA_HOME/bin/catalina.sh stop -force" > /dev/null
     findpid
 
     echo -n "."
