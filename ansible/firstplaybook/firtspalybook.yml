@@ -1,5 +1,6 @@
   - name: Manage Tomcat
     hosts: all
+    become: true
 
     roles:
           - { role: tomcat, tags: ['tomcat'] }
