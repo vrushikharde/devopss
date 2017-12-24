@@ -36,3 +36,22 @@ Author Information
 ------------------
 
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+
+
+Running and Debugging Information
+-----------------------
+Inventory File
+[all]
+172.31.87.42 ansible_ssh_private_key_file=/home/ec2-user/server1.pem
+
+Running Command
+
+ansible-playbook firstplaybook.yml -vvv
+
+netstat -tulpn
+1. Looking for JRE location
+
+
+
+
+
