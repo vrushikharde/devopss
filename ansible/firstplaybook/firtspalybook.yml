@@ -1,6 +1,12 @@
-  - name: Manage Tomcat
-    hosts: all
-    become: true
+- name: Manage Tomcat
+  hosts: all
+  become: true
 
-    roles:
-          - { role: tomcat, tags: ['tomcat'] }
+  roles:
+    - { role: tomcat, tags: ['tomcat'] }
+  
+- name: start tomcat service
+  hosts: all
+  become: true
+  service: name=tomcat state=started
+
