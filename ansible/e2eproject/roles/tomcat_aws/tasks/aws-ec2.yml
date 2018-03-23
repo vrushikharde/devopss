@@ -3,7 +3,7 @@
     key_name: "{{ keypair }}"
     aws_access_key: "AKIAJKCHVVFVMFG7KMNA"
     aws_secret_key: "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"
-    group: Kubectl  # security group name
+    group: launch-wizard-2  # security group name
     instance_type: "{{ instance_type}}"
     image: "{{ ami }}"
     wait: true
