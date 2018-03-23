@@ -16,6 +16,14 @@
     - tomcat
 
   tasks:
+  
+  - copy:
+      src: /usr/share/maven3/nvnshoppingcart/target/nvnshoppingcart.war
+      dest: /usr/local/apache-tomcat-8.0.21/webapps/
+      become: true
+      root: true
+      mode: 0755
+
   - name: start tomcat service
     become: true
     service: name=tomcat state=started
