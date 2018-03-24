@@ -19,10 +19,10 @@
   
   - copy:
       src: /usr/share/maven3/nvnshoppingcart/target/nvnshoppingcart.war
-      dest: /usr/local/apache-tomcat-8.0.21/webapps/
-      become: true
-      root: true
-      mode: 0755
+      dest: /usr/local/apache-tomcat-8.0.23/webapps/
+      mode: 0777
+      owner: root
+      group: root
 
   - name: start tomcat service
     become: true
